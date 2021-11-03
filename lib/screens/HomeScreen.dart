@@ -18,10 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       child: Builder(builder: (BuildContext context) {
         final TabController tabController = DefaultTabController.of(context)!;
-        tabController.addListener(() {
-          if (!tabController.indexIsChanging) {
-          }
-        });
+        
         return Scaffold(
           appBar: AppBar(
             title: Center(child: Text("WDList")),
@@ -31,13 +28,21 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           body: TabBarView(
+            
             children: tabs.map((Tab tab) {
               return Center(
                 child: Icon(Icons.wifi)
               );
             }).toList(),
           ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: (){
+              print("Tab: "+tabs[tabController.index].text.toString());
+            },
+            child: Icon(Icons.add),
+          ),
         );
       }),
-    );}
+    );
+    }
   }
