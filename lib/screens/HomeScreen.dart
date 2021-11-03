@@ -24,6 +24,9 @@ class _HomeScreenState extends State<HomeScreen> {
             title: Center(child: Text("WDList")),
             elevation: 0,
             bottom: const TabBar(
+              indicatorColor: Colors.lime,
+              labelColor: Colors.lime,
+              unselectedLabelColor: Colors.white,
               tabs: tabs,
             ),
           ),
