@@ -14,9 +14,9 @@ class _HomeScreenState extends State<HomeScreen> {
           appBar: AppBar(
             bottom: const TabBar(
               tabs: [
-                Tab(icon: Icon(Icons.directions_car)),
-                Tab(icon: Icon(Icons.directions_transit)),
-                Tab(icon: Icon(Icons.directions_bike)),
+                Tab(text: "Morning",icon: Icon(Icons.wb_sunny)),
+                Tab(text: "Evening",icon: Icon(Icons.nights_stay)),
+                Tab(text: "Weekend",icon: Icon(Icons.weekend)),
               ],
             ),
             title: Center(child: const Text("WDList"),),
