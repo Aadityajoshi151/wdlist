@@ -10,7 +10,6 @@ class MyApp extends StatelessWidget {
       title: "WDList",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.deepOrange,
         colorScheme: ColorScheme.fromSwatch()
             .copyWith(primary: Colors.deepOrange, secondary: Colors.lime),
         scaffoldBackgroundColor: Colors.white,

@@ -8,16 +8,26 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Center(child: Text("WDList")), elevation: 0),
-      body: Column(
-        children: <Widget>[Text("Hello World!")]),
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: (){
-            print("Add Pressed!");
-          },
+    return DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            bottom: const TabBar(
+              tabs: [
+                Tab(icon: Icon(Icons.directions_car)),
+                Tab(icon: Icon(Icons.directions_transit)),
+                Tab(icon: Icon(Icons.directions_bike)),
+              ],
+            ),
+            title: Center(child: const Text("WDList"),),
+          ),
+          body: const TabBarView(
+            children: [
+              Icon(Icons.directions_car),
+              Icon(Icons.directions_transit),
+              Icon(Icons.directions_bike),
+            ],
+          ),
         ),
-    );
-  }
-}
+      );
+  }}
