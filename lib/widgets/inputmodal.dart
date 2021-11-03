@@ -19,6 +19,7 @@ class _InputModalState extends State<InputModal> {
         child: Column(
           children: <Widget>[
             TextFormField(
+              textCapitalization: TextCapitalization.sentences,
               controller: taskcontroller,
               decoration: InputDecoration(
                 labelText: 'Enter Task',
