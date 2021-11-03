@@ -12,6 +12,7 @@ class _HomeScreenState extends State<HomeScreen> {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
+            elevation: 0,
             bottom: const TabBar(
               tabs: [
                 Tab(text: "Morning",icon: Icon(Icons.wb_sunny)),
@@ -23,9 +24,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           body: const TabBarView(
             children: [
-              Icon(Icons.directions_car),
-              Icon(Icons.directions_transit),
-              Icon(Icons.directions_bike),
+              Icon(Icons.wb_sunny),
+              Icon(Icons.nights_stay),
+              Icon(Icons.weekend),
             ],
           ),
         ),
