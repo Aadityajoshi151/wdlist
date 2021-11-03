@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:wdlist/widgets/inputmodal.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({ Key? key }) : super(key: key);
   @override
   _HomeScreenState createState() => _HomeScreenState();
   
@@ -40,7 +42,13 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: (){
-              print("Tab: "+tabs[tabController.index].text.toString());
+              showDialog(
+                context: context, 
+              builder: (BuildContext context){
+                return InputModal();
+              }
+              );
+              //print("Tab: "+tabs[tabController.index].text.toString());
             },
             child: Icon(Icons.add),
           ),
