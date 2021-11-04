@@ -11,11 +11,13 @@ class InputModal extends StatefulWidget {
 
 class _InputModalState extends State<InputModal> {
   TextEditingController taskcontroller = new TextEditingController();
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
       scrollable: true,
       content: Form(
+        key: _formKey,
         child: Column(
           children: <Widget>[
             TextFormField(
@@ -24,6 +26,12 @@ class _InputModalState extends State<InputModal> {
               decoration: InputDecoration(
                 labelText: 'Enter Task',
               ),
+              validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Please Enter a Task';
+                      }
+                      return null;
+                    },
             )
           ],
         ),
@@ -32,8 +40,12 @@ class _InputModalState extends State<InputModal> {
         ElevatedButton(
             child: Text("Create"),
             onPressed: () {
-              task = taskcontroller.text;
-              Navigator.of(context).pop();
+              if (_formKey.currentState!.validate()) {
+                 task = taskcontroller.text;
+                 print(task);
+                Navigator.of(context).pop();       
+                        }
+              
             })
       ],
     );
